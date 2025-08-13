@@ -1,47 +1,397 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2113.65">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
-    p.p3 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #000000; color: rgba(0, 0, 0, 0.85); -webkit-text-stroke: rgba(0, 0, 0, 0.85)}
-    span.s1 {font-kerning: none}
-    span.s2 {font-kerning: none; background-color: #b3b3b3}
-    span.s3 {font: 12.0px Helvetica; font-kerning: none; color: #000000; -webkit-text-stroke: 0px #000000}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOE ❤️ LAURA - Tecnologia que Alimenta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .font-roboto { font-family: 'Roboto', sans-serif; }
+        .bg-pattern-light {
+            background-color: #f8f9fa;
+            background-image: radial-gradient(#AF8542 0.5px, transparent 0.5px), radial-gradient(#e63946 0.5px, #f8f9fa 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+        .bg-pattern-dark {
+            background-color: #1a202c; /* gray-900 */
+            background-image: radial-gradient(#AF8542 0.5px, transparent 0.5px), radial-gradient(#e63946 0.5px, #1a202c 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+        .laura-gold { color: #AF8542; }
+        .laura-red { color: #e63946; }
+        .btn-red { background-color: #e63946; }
+        .swal2-popup {
+            font-family: 'Poppins', sans-serif;
+            border-radius: 1rem;
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Dark mode styles for SweetAlert2 */
+        .dark .swal2-popup {
+            background-color: #2d3748 !important; /* gray-800 */
+            color: #e2e8f0 !important; /* gray-200 */
+        }
+        .dark .swal2-title {
+            color: #f7fafc !important; /* gray-100 */
+        }
+        .partner-logo {
+            max-height: 60px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease-in-out;
+        }
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        #qrcode-container img {
+            margin: auto;
+            border-radius: 0.5rem;
+        }
+    </style>
+    <script>
+        // Configuração do Tailwind para modo escuro
+        tailwind.config = {
+            darkMode: 'class',
+        }
+        // Lógica para aplicar o tema na inicialização
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
 </head>
-<body>
-<p class="p1"><span class="s1"></span><br></p>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Helvetica; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>SI Delivery</b></span></h1>
-<p class="p3"><span class="s1">Conveniência Santa Isabel</span></p>
-<p class="p4"><span class="s1">Carregando...</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Helvetica; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Nosso Cardápio</b></span></h2>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p3"><span class="s1">Aguardando produtos...</span></p>
-<p class="p6"><span class="s2">Que tal adicionar?</span><span class="s3"> </span><span class="s2">Peça de Novo</span><span class="s3"> </span><span class="s2">Meus Pedidos</span><span class="s3"><span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"></span><br></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Helvetica; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Seu Pedido</b></span></h2>
-<p class="p3"><span class="s1">Seu carrinho está vazio.</span></p>
-<p class="p6"><span class="s2">Aplicar</span><span class="s3"><span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p4"><span class="s1">SubtotalR$ 0,00</span></p>
-<p class="p4"><span class="s1">Desconto- R$ 0,00</span></p>
-<p class="p4"><span class="s1">TotalR$ 0,00</span></p>
-<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Helvetica; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Informações para Entrega</b></span></h3>
-<p class="p6"><span class="s2">Continuar</span><span class="s3"><span class="Apple-converted-space"> </span></span></p>
-<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Helvetica; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Forma de Pagamento</b></span></h3>
-<p class="p6"><span class="s2">Pagar na Entrega</span><span class="s3"> </span><span class="s2">Pagar Online</span><span class="s3"><span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Helvetica; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Pedido Recebido!</b></span></h3>
-<p class="p3"><span class="s1">Seu pedido foi enviado com sucesso. Acompanhe o status na aba "Meus Pedidos".</span></p>
-<p class="p6"><span class="s2">Fechar</span><span class="s3"><span class="Apple-converted-space"> </span></span></p>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-300 transition-colors duration-500">
+
+    <!-- Header -->
+    <header class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-gray-900 focus:ring-yellow-500 rounded-lg">
+                <span class="laura-red">DOE</span> ❤️ <span class="laura-gold">LAURA</span>
+            </a>
+            <div class="flex items-center space-x-4">
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="http://laura-ia.com.br/" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-400 hover:laura-gold transition duration-300 flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                        <span>Site Principal</span>
+                    </a>
+                    <a href="#sobre" class="text-gray-600 dark:text-gray-400 hover:laura-gold transition duration-300">O Projeto</a>
+                    <a href="#transparencia" class="text-gray-600 dark:text-gray-400 hover:laura-gold transition duration-300">Transparência</a>
+                </div>
+                <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                </button>
+                <a href="#doar" class="btn-red hover:bg-red-700 text-white font-bold py-2 px-5 rounded-full transition duration-300 shadow-lg hover:shadow-xl">
+                    Doar
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="container mx-auto px-6 pt-20 pb-16 text-center animate-fade-in">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Tecnologia que <span class="laura-gold">transforma</span>.</h1>
+        <h2 class="text-4xl md:text-6xl font-bold mb-8">Solidariedade que <span class="laura-red">alimenta</span>.</h2>
+        <p class="max-w-3xl mx-auto text-gray-600 dark:text-gray-400 mb-10 font-roboto">
+            Laura é uma IA que ajuda negócios a crescer. Agora, ela também tem a missão de usar essa força para levar comida a quem mais precisa, em parceria com o Mesa Brasil SESC.
+        </p>
+        <div class="flex justify-center items-center space-x-4">
+            <a href="#doar" class="btn-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 shadow-xl hover:scale-105 transform">
+                Faça sua Doação
+            </a>
+            <a href="#transparencia" class="bg-white dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-200 hover:bg-gray-200 text-gray-700 font-bold py-3 px-8 rounded-full text-lg transition duration-300 shadow-xl hover:scale-105 transform border border-gray-300 dark:border-gray-600">
+                Ver Relatório
+            </a>
+        </div>
+    </main>
+
+    <!-- O que é Section -->
+    <section id="sobre" class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="animate-fade-in">
+                <h3 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">🤖 O que é a Laura?</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-6 font-roboto">
+                    Laura é uma agente de inteligência artificial para e-commerces e pequenos negócios. Ela otimiza o atendimento, aumenta as conversões e ajuda empreendedores a economizarem tempo com tecnologia de ponta.
+                </p>
+                <h3 class="text-3xl font-bold mb-4 laura-red">❤️ O que é o DOE ❤️ LAURA?</h3>
+                <p class="text-gray-600 dark:text-gray-400 font-roboto">
+                    O DOE ❤️ LAURA é um projeto social que conecta tecnologia com solidariedade. A cada doação via PIX, 100% do valor vai direto para o programa Mesa Brasil SESC São José/SC, que distribui alimentos a instituições cadastradas e famílias em situação de vulnerabilidade.
+                </p>
+            </div>
+            <div class="flex justify-center animate-fade-in">
+                <img src="https://i.imgur.com/8AN3A8j.jpeg" alt="Imagem da assistente Laura" class="rounded-xl shadow-2xl w-full max-w-sm transform hover:scale-105 transition-transform duration-500">
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona Section -->
+    <section class="py-20 bg-pattern-light dark:bg-pattern-dark">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-3xl font-bold mb-12 text-gray-900 dark:text-white">Como a sua doação chega a quem precisa</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="bg-red-100 dark:bg-red-900/50 text-red-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Você Doa via PIX</h4>
+                    <p class="text-gray-600 dark:text-gray-400 font-roboto">Use a chave PIX ou o QR Code aqui no site. É rápido, seguro e 100% do valor é repassado.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                     <div class="bg-yellow-100 dark:bg-yellow-900/50 text-yellow-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 4h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">O Mesa Brasil Recebe</h4>
+                    <p class="text-gray-600 dark:text-gray-400 font-roboto">O valor vai diretamente para a conta do Mesa Brasil SESC São José/SC, sem intermediários.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                     <div class="bg-green-100 dark:bg-green-900/50 text-green-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Alimento na Mesa</h4>
+                    <p class="text-gray-600 dark:text-gray-400 font-roboto">A instituição converte as doações em alimentos e distribui para entidades assistidas na cidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Doação Section -->
+    <section id="doar" class="py-20 bg-gray-800 dark:bg-black">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-4xl font-bold mb-4 text-white">Faça a sua parte</h3>
+            <p class="text-lg text-gray-300 mb-8 font-roboto">"Doe o que puder. Cada real vira comida na mesa de quem mais precisa."</p>
+            
+            <div class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 max-w-md mx-auto p-8 rounded-2xl shadow-lg">
+                <div id="qrcode-container" class="p-2 bg-white rounded-lg inline-block">
+                    <!-- O QR Code será gerado aqui -->
+                </div>
+                <p class="font-semibold mb-2 mt-4">Chave PIX (E-mail):</p>
+                <div class="flex items-center justify-center bg-gray-100 dark:bg-gray-700 p-3 rounded-lg">
+                    <span id="pix-key" class="text-lg font-mono">doe@laura.ia.br</span>
+                    <button onclick="copyPixKey()" class="ml-4 p-2 rounded-full bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 transition focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-gray-800 focus:ring-yellow-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                          <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                          <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                        </svg>
+                    </button>
+                </div>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-4 font-roboto">
+                    <strong>Instituição beneficiada:</strong> Mesa Brasil – São José/SC<br>
+                    🔒 Segurança garantida. A doação vai direto para a instituição.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transparência Section -->
+    <section id="transparencia" class="py-20">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">📈 Prestação de Contas</h3>
+            <p class="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10 font-roboto">Transparência é a nossa prioridade. Aqui você acompanha o impacto da sua doação. A tabela abaixo é atualizada em tempo real.</p>
+            
+            <div id="table-container" class="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-x-auto">
+                <!-- A tabela será inserida aqui pelo JavaScript -->
+                <p id="loading-message" class="text-center font-roboto">A carregar dados da transparência...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parceiros -->
+    <section id="parceiros" class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-3xl font-bold mb-12 text-gray-900 dark:text-white">🤝 Parceiros Desta Ação</h3>
+            <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 md:gap-x-16">
+                <!-- Substitua os URLs pelos links das suas logomarcas reais -->
+                <img src="https://laura-ia.com.br/wp-content/uploads/2025/06/d158b798-4659-4955-828a-68707527103c-1024x486.png" alt="Logomarca Laura IA" class="partner-logo">
+                <img src="https://eyagencia.com.br/wp-content/themes/eyagencia/images/logo.png" alt="Logomarca EYAgência" class="partner-logo">
+                <img src="https://sescmesabrasil.sescsp.org.br/wp-content/themes/mesabrasil/assets/images/logo-mesa-brasil-2024.svg" alt="Logomarca Mesa Brasil SESC" class="partner-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-black text-gray-300 py-10">
+        <div class="container mx-auto px-6 text-center">
+            <h4 class="text-2xl font-bold mb-4 text-white">Compartilhe e amplifique o bem!</h4>
+            <p class="mb-6 font-roboto">Poste nas redes sociais com a hashtag:</p>
+            <div class="font-bold text-lg laura-gold mb-8">#DoeComLaura #LauraSolidaria #MesaBrasil</div>
+            <div class="mb-6">
+                 <a href="http://laura-ia.com.br/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300 border border-gray-600 hover:border-white rounded-full py-2 px-4">
+                    Conheça a Laura IA - Inteligência Artificial para Negócios
+                </a>
+            </div>
+            <p class="text-sm text-gray-500 mt-8">&copy; 2025 Laura IA. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // --- FUNÇÕES ---
+
+        function generateQRCode() {
+            try {
+                const pixKey = document.getElementById('pix-key').innerText;
+                const qrContainer = document.getElementById('qrcode-container');
+                qrContainer.innerHTML = ""; // Limpa o container antes de gerar um novo
+                new QRCode(qrContainer, {
+                    text: pixKey,
+                    width: 192,
+                    height: 192,
+                    colorDark : "#000000",
+                    colorLight : "#ffffff",
+                    correctLevel : QRCode.CorrectLevel.H
+                });
+            } catch (e) {
+                console.error("Erro ao gerar QR Code:", e);
+                const qrContainer = document.getElementById('qrcode-container');
+                if(qrContainer) qrContainer.innerHTML = "<p>Erro ao gerar QR Code</p>";
+            }
+        }
+
+        function handleSheetData(values) {
+            const tableContainer = document.getElementById('table-container');
+            if (!values || values.length <= 1) { 
+                tableContainer.innerHTML = '<p class="text-center font-roboto">Nenhum dado de doação encontrado ainda.</p>';
+                return;
+            }
+
+            let tableHTML = `<table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                                <thead class="bg-gray-50 dark:bg-gray-700">
+                                    <tr>`;
+            const headers = values[0];
+            headers.forEach(header => {
+                tableHTML += `<th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">${header}</th>`;
+            });
+            tableHTML += `</tr></thead><tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">`;
+
+            for (let i = 1; i < values.length; i++) {
+                const row = values[i];
+                if (row.length > 0) {
+                    tableHTML += `<tr>`;
+                    row.forEach((cell, cellIndex) => {
+                        if (cellIndex === headers.length - 1 && cell && cell.toLowerCase().startsWith('http')) {
+                            tableHTML += `<td class="px-6 py-4 whitespace-nowrap text-sm font-medium"><a href="${cell}" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">Ver Comprovante</a></td>`;
+                        } else {
+                            tableHTML += `<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">${cell || ''}</td>`;
+                        }
+                    });
+                    tableHTML += `</tr>`;
+                }
+            }
+            tableHTML += `</tbody></table>`;
+            tableContainer.innerHTML = tableHTML;
+        }
+
+        function handleSheetError(error) {
+            console.error('ERRO DETALHADO:', error);
+            const tableContainer = document.getElementById('table-container');
+            let errorMessage = `<div class="text-center font-roboto text-red-500 p-4 bg-red-100 dark:bg-red-900/50 rounded-lg">
+                <p class="font-bold">Não foi possível carregar os dados da transparência.</p>
+                <p class="text-sm mt-2"><strong>Causa Provável:</strong> A planilha não está partilhada publicamente ou o ID está incorreto.</p>
+            </div>`;
+            tableContainer.innerHTML = errorMessage;
+        }
+
+        function setupThemeToggle() {
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+            const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                themeToggleLightIcon.classList.remove('hidden');
+            } else {
+                themeToggleDarkIcon.classList.remove('hidden');
+            }
+
+            themeToggleBtn.addEventListener('click', function() {
+                themeToggleDarkIcon.classList.toggle('hidden');
+                themeToggleLightIcon.classList.toggle('hidden');
+                if (localStorage.getItem('theme')) {
+                    if (localStorage.getItem('theme') === 'light') {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('theme', 'light');
+                    }
+                } else {
+                    if (document.documentElement.classList.contains('dark')) {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('theme', 'light');
+                    } else {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('theme', 'dark');
+                    }
+                }
+            });
+        }
+
+        function copyPixKey() {
+            const pixKey = document.getElementById('pix-key').innerText;
+            navigator.clipboard.writeText(pixKey).then(() => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Chave PIX copiada!',
+                    text: 'Agora é só colar no seu aplicativo do banco.',
+                    showConfirmButton: false,
+                    timer: 2000,
+                });
+            }).catch(err => {
+                try {
+                    const textArea = document.createElement("textarea");
+                    textArea.value = pixKey;
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Chave PIX copiada!',
+                        text: 'Agora é só colar no seu aplicativo do banco.',
+                        showConfirmButton: false,
+                        timer: 2000
+                    });
+                } catch (e) {
+                    console.error('Falha ao copiar: ', e);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Não foi possível copiar a chave. Por favor, copie manualmente.',
+                    });
+                }
+            });
+        }
+
+        // --- INICIALIZAÇÃO DA PÁGINA ---
+        document.addEventListener('DOMContentLoaded', () => {
+            setupThemeToggle();
+            generateQRCode();
+            google.script.run
+                .withSuccessHandler(handleSheetData)
+                .withFailureHandler(handleSheetError)
+                .getSheetData();
+        });
+    </script>
+
 </body>
 </html>
